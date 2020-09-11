@@ -1,19 +1,13 @@
 const express = require('express')
 
-const db = require('./db-helper') //CHANGE321
+const db = require('./db-helper')
 
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  db.find("resources")
-  .then((resources) => {
-    if (resources.length) {
-      res.status(200).json(resources);
-    } else {
-      res
-        .status(404)
-        .json({ message: "There are no resource on the server" });
-    }
+  db.findTaskList()
+  .then((tasks) => {
+    res.status(200).json(tasks);
   })
   .catch((err) => {
     res.status(500).json({ message: err });
@@ -21,7 +15,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  db.add(req.body, "resources")
+  db.add(req.body, "tasks")
   .then(response => {
     res.status(200).json(response)
   }
