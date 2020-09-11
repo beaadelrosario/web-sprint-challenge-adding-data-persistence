@@ -1,0 +1,15 @@
+## 1. Explain the difference between Relational Databases and SQL.
+
+Relational Databases describe the way data is organized, SQL is a querying language used to organize the data stored in the database
+
+## 2. Why do tables need a primary key?
+
+A primary key gives you a way to target a particular row in a table.
+
+## 3. What is the name given to a table column that references the primary key on another table.
+
+foreign key
+
+## 4. What do we need in order to have a many to many relationship between two tables.
+
+intermediary or join table which is a third table
